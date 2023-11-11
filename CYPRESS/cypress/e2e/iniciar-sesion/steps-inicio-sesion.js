@@ -1,6 +1,7 @@
 
 import LoginPage from './class-inicio-sesion'
 import { Given, When, Then, And } from 'cypress-cucumber-preprocessor/steps';
+import config from "../../assets/config.json";
 
 const loginPage = new LoginPage();
 
@@ -15,9 +16,9 @@ Given('Un usuario se encuentra en la pagina de inicio de sesion de Ghost', () =>
 });
 
 When('el usuario introduce un nombre de usuario y contrasena correctos', () => {
-    loginPage.fillUsername('bc.castro@uniandes.edu.co');
+    loginPage.fillUsername(config.user);
     cy.wait(1000)
-    loginPage.fillPassword('0123456789');
+    loginPage.fillPassword(config.password);
     cy.wait(1000)
 });
 
@@ -27,6 +28,6 @@ And('el usuario hace clic en el boton de inicio de sesion', () => {
 });
 
 Then('el usuario deberia ser redirigido al dashboard principal de Ghost', () => {
-    cy.url().should('eq', 'http://localhost:2368/ghost/#/dashboard');
+    cy.url().should('eq', config.dashboard_url);
     cy.wait(1000)
 });
