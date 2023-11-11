@@ -1,0 +1,9 @@
+{
+    "user": "user",
+    "password": "password",
+    "posts_url": "http://localhost:2368/ghost/#/posts",
+    "pages_url": "http://localhost:2368/ghost/#/pages",
+    "dashboard_url": "http://localhost:2368/ghost/#/dashboard",
+    "new_page_url": "http://localhost:2368/ghost/#/editor/page",
+    "sigin_url" : "http://localhost:2368/ghost/#/signin"
+}
