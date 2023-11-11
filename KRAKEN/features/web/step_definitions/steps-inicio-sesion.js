@@ -1,27 +1,34 @@
-const { Given, When, Then, And } = require('@cucumber/cucumber');
+const { Given, When, Then} = require('@cucumber/cucumber');
 const LoginPage = require('./class-inicio-sesion');
 
-let driver; // Asume que 'driver' es tu instancia de WebDriver
-
-Given('I navigate to page "http://localhost:2368/ghost/#/signin"', async () => {
-    // Aquí Kraken manejará la navegación
+When('I enter email {string}', async function (email) {
+    let element = await this.driver.$('input#identification');
+    return await element.setValue(email);
 });
 
-When('el usuario introduce un nombre de usuario {string}', async (username) => {
-    const loginPage = new LoginPage(driver);
-    await loginPage.fillUsername(username);
+When('I enter password {string}', async function (password) {
+    let element = await this.driver.$('input#password');
+    return await element.setValue(password);
 });
 
-And('el usuario introduce una contrasena {string}', async (password) => {
-    const loginPage = new LoginPage(driver);
-    await loginPage.fillPassword(password);
+When('I click on Sign in button', async function () {
+    let element = await this.driver.$('button[data-test-button="sign-in"]');
+    return await element.click();
 });
 
-When('el usuario hace clic en el boton de inicio de sesion', async () => {
-    const loginPage = new LoginPage(driver);
-    await loginPage.submit();
+Then('la URL deberia ser {string}', async function (expectedUrl) {
+    let currentUrl = await this.driver.getUrl();
+    if (currentUrl !== expectedUrl) {
+        throw new Error(`URL esperada era ${expectedUrl}, pero se encontró ${currentUrl}`);
+    }
 });
 
-Then('el usuario deberia ser redirigido al dashboard principal de Ghost', async () => {
-    await driver.wait(driver.until.urlIs('http://localhost:2368/ghost/#/dashboard'));
+Then('debería ver el mensaje de error {string}', async function (expectedErrorMessage) {
+    let element = await this.driver.$('p.main-error');
+    let currentErrorMessage = await element.getText();
+    if (currentErrorMessage.includes(expectedErrorMessage) === false) {
+        throw new Error(`Mensaje de error esperado era ${expectedErrorMessage}, pero se encontró ${currentErrorMessage}`);
+    }
 });
+
+
