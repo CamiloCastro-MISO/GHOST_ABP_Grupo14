@@ -25,6 +25,10 @@ class LoginPage {
         cy.get('button[data-test-button="sign-in"]').click();
         cy.wait(1000)
     }
+
+    validate(text) {
+        cy.get('p.main-error').contains(text);
+    }    
 }
 
 export default LoginPage;

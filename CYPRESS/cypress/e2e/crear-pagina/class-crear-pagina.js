@@ -1,5 +1,5 @@
 import config from "../../assets/config.json";
-import LoginPage from '../iniciar-sesion/class-inicio-sesion';
+import LoginPage from '../1-iniciar-sesion/1-class-inicio-sesion';
 import DashBoardItem from '../dashboard/class-dashboard';
 
 class PageItem {
