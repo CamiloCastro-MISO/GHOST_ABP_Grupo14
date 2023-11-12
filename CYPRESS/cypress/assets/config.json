@@ -8,5 +8,6 @@
     "sigin_url" :    "http://localhost:2368/ghost/#/signin",
     "fill_title":    "Title",
     "fill_text":     "Text",
-    "settings_url":  "http://localhost:2368/ghost/#/settings"
+    "settings_url":  "http://localhost:2368/ghost/#/settings",
+    "members_url":   "http://localhost:2368/ghost/#/members"
 }
