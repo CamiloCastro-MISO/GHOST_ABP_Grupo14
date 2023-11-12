@@ -10,7 +10,7 @@ Feature: Funcionalidad de crear una pagina
         And el usuario hace click sobre el boton Publicar
         And el usuario hace click sobre el boton Continuar
         And el usuario hace click sobre el boton Publicar Ahora
-        Then el usuario deberia ver la pagina como publicada 
+        Then el usuario deberia ver la pagina como publicada
 
     @ListarPaginas
     Scenario: Usuario visita el listar paginas en el admin de Ghost
@@ -41,15 +41,4 @@ Feature: Funcionalidad de crear una pagina
         And el usuario escribe en los campos Titulo y Contenido
         And el usuario hace click sobre el boton Preview
         Then el usuario deberia ver la previsualizacion de la pagina
-
-    @CrearPagina
-    Scenario: El usuario crea una pagina
-        Given Un usuario se encuentra en la pagina principal del admin de Ghost
-        When el usuario hace click sobre el item pages
-        And el usuario hace click sobre el boton New Page
-        And el usuario escribe en los campos Titulo y Contenido
-        And el usuario hace click sobre el boton Publicar
-        And el usuario hace click sobre el boton Continuar
-        And el usuario hace click sobre el boton Publicar Ahora
-        Then el usuario deberia ver la pagina como publicada            
 

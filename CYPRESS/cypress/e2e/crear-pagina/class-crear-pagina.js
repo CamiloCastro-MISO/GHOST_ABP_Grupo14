@@ -6,40 +6,39 @@ class PageItem {
 
     visit() {
         cy.visit(config.pages_url);
-    }
-
-    visitDetail(){
-        cy.visit('http://localhost:2368/ghost/#/editor/page')
-    }
-
-    fillForm(title, textBody) { 
-        cy.get('textarea.gh-editor-title').type(name);
-        cy.wait(1000)  
-        cy.get('input#password').type(password);
         cy.wait(1000)
     }
 
-    fillPage() { 
+    visitDetail() {
+        cy.visit('http://localhost:2368/ghost/#/editor/page')
+        cy.wait(1000)
+    }
+
+    fillPage() {
         cy.get('textarea.gh-editor-title').type('Title');
-        cy.wait(1000)  
+        cy.wait(1000)
         cy.get('div.kg-prose').type('Text');
         cy.wait(1000)
     }
 
     submitPublish() {
         cy.get('button[data-test-button="publish-flow"]').click();
+        cy.wait(1000)
     }
 
     submitPreview() {
         cy.get('button[data-test-button="publish-preview"]').click();
+        cy.wait(1000)
     }
 
     submitContinuePublish() {
         cy.get('button[data-test-button="continue"]').click();
+        cy.wait(1000)
     }
 
     submitConfirmPublish() {
         cy.get('button[data-test-button="confirm-publish"]').click();
+        cy.wait(1000)
     }
 
     goToCreatePage() {
@@ -59,11 +58,11 @@ class PageItem {
         cy.wait(1000);
     }
 
-    checkMainPage(){
-        let logIn  = new LoginPage()
+    checkMainPage() {
+        let logIn = new LoginPage()
         logIn.visit();
         cy.wait(1000);
-        logIn.login(config.user, config.password);
+        logIn.login(config.username, config.password);
         cy.wait(1000);
         let dashboard = new DashBoardItem();
         dashboard.visit();
