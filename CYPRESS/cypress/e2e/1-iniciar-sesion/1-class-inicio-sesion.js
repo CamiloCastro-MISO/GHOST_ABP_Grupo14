@@ -27,7 +27,9 @@ class LoginPage {
     }
 
     validate(text) {
+        cy.wait(1000);
         cy.get('p.main-error').contains(text);
+
     }
 }
 

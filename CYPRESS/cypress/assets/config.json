@@ -1,6 +1,6 @@
 {
-    "username":      "hdmartinezd@unal.edu.co",
-    "password":      "Rideawave123",
+    "username":      "bc.castro@uniandes.edu.co",
+    "password":      "0123456789",
     "posts_url":     "http://localhost:2368/ghost/#/posts",
     "pages_url":     "http://localhost:2368/ghost/#/pages",
     "dashboard_url": "http://localhost:2368/ghost/#/dashboard",
@@ -9,5 +9,6 @@
     "sigin_url" :    "http://localhost:2368/ghost/#/signin",
     "fill_title":    "Title",
     "fill_text":     "Text",
-    "settings_url":  "http://localhost:2368/ghost/#/settings"
+    "settings_url":  "http://localhost:2368/ghost/#/settings",
+    "members_url":   "http://localhost:2368/ghost/#/members"
 }
