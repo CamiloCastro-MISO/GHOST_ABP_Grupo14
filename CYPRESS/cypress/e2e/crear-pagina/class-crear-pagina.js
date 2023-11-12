@@ -12,7 +12,6 @@ class PageItem {
         cy.visit('http://localhost:2368/ghost/#/editor/page')
     }
 
- 
     fillForm(title, textBody) { 
         cy.get('textarea.gh-editor-title').type(name);
         cy.wait(1000)  
@@ -20,8 +19,27 @@ class PageItem {
         cy.wait(1000)
     }
 
+    fillPage() { 
+        cy.get('textarea.gh-editor-title').type('Title');
+        cy.wait(1000)  
+        cy.get('div.kg-prose').type('Text');
+        cy.wait(1000)
+    }
+
     submitPublish() {
         cy.get('button[data-test-button="publish-flow"]').click();
+    }
+
+    submitPreview() {
+        cy.get('button[data-test-button="publish-preview"]').click();
+    }
+
+    submitContinuePublish() {
+        cy.get('button[data-test-button="continue"]').click();
+    }
+
+    submitConfirmPublish() {
+        cy.get('button[data-test-button="confirm-publish"]').click();
     }
 
     goToCreatePage() {
@@ -33,6 +51,11 @@ class PageItem {
 
     goToListPages() {
         cy.get('a[data-test-nav="pages"]').click();
+        cy.wait(1000);
+    }
+
+    goToSettings() {
+        cy.get('.settings-menu-toggle').click();
         cy.wait(1000);
     }
 
