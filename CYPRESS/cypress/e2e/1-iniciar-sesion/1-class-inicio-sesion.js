@@ -28,7 +28,7 @@ class LoginPage {
 
     validate(text) {
         cy.get('p.main-error').contains(text);
-    }    
+    }
 }
 
 export default LoginPage;
