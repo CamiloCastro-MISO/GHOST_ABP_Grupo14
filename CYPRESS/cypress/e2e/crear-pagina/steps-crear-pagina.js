@@ -1,4 +1,3 @@
-
 import PageItem from './class-crear-pagina'
 import { Given, When, Then, And } from 'cypress-cucumber-preprocessor/steps';
 import config from "../../assets/config.json";
