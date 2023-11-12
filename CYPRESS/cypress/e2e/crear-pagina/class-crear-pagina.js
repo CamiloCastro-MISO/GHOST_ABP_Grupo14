@@ -37,7 +37,8 @@ class PageItem {
     }
 
     submitConfirmPublish() {
-        cy.get('button[data-test-button="confirm-publish"]').click();
+        cy.wait(1000)
+        cy.get('[data-test-button="publish-flow"]').click({ force: true });
         cy.wait(1000)
     }
 

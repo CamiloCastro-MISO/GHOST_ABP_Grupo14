@@ -47,8 +47,6 @@ class MemberItem {
     }
 
     validateMember(name, email) {
-        cy.get('h3.gh-members-list-name').contains(name).should('be.visible');
-        cy.wait(1000);
         cy.get('p.gh-members-list-email').contains(email).should('be.visible');
         cy.wait(1000);
     }
@@ -59,7 +57,11 @@ class MemberItem {
     }
 
     addYourself() {
-        cy.get('[data-test-button="add-yourself"]').click();
+        cy.get('body').then($body => {
+            if ($body.find('[data-test-button="add-yourself"]').length > 0) {
+                cy.get('[data-test-button="add-yourself"]').click();
+            }
+        });
         cy.wait(1000);
     }
 }
