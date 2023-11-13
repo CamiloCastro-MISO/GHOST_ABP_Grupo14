@@ -14,7 +14,7 @@ Luis Alberto Mendoza Hernández ([l.mendozah@uniandes.edu.co](mailto:l.mendozah@
 
 Hernán David Martínez Domínguez ([hd.martinezd1@uniandes.edu.co](mailto:hd.martinezd1@uniandes.edu.co))
 
-Josué Federico Vaca Rodríguez([j.vacaq@uniandes.edu.co](mailto:j.vacaq@uniandes.edu.co))
+Josué Federico Vaca Rodríguez ([j.vacaq@uniandes.edu.co](mailto:j.vacaq@uniandes.edu.co))
 
 _________________
 ## Tutorial Entrega Semana 5 Ghost - Pruebas Automatizadas de Software
@@ -32,7 +32,7 @@ A continuación, usted encontrará un enlace a un video con el paso a paso compl
 ______________
 ## Paso a paso para ejecutar las pruebas
 
-A continuación, encontrará los pasos para poder ejecutar exitosamente las pruebas de la aplicacion Ghost de forma local: 
+A continuación, usted encontrará una guía con los pasos necesarios para poder ejecutar exitosamente las pruebas de la aplicacion Ghost de forma local: 
 
 1. Clone el repositorio encontrado en  https://github.com/CamiloCastro-MISO/GHOST_ABP_Grupo14. Para esto, puede usar el comando: 
     
