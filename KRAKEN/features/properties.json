@@ -1,0 +1,10 @@
+{
+    "USERNAME1": "<bc.castro@uniandes.edu.co>",
+    "PASSWORD1": "0123456789",
+    "USERNAME_ERROR": "errorbc.castro@error.edu.co",
+    "PASSWORD_ERROR": "00000",
+    "DASHBOARD_URL": "http://localhost:2368/ghost/#/signin",
+    "PAGES_URL": "http://localhost:2368/ghost/#/pages",
+    "MEMBERS _URL": "http://localhost:2368/ghost/#/members",
+    "SIGNIN_URL": "http://localhost:2368/ghost/#/signin"
+}
