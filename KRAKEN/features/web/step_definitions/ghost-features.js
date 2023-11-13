@@ -10,12 +10,16 @@ function generateDummyData() {
 }
 
 const { name, email } = generateDummyData();
+<<<<<<< HEAD
 const { name1, email1 } = generateDummyData();
+=======
+>>>>>>> main
 
 When('Recargo la pagina', async function () {
     await this.driver.pause(1000);
     return await this.driver.refresh();
 });
+<<<<<<< HEAD
 // OBJECTS// OBJECTS// OBJECTS// OBJECTS// OBJECTS// OBJECTS// OBJECTS
 async function typeText(selector, text) {
     await this.driver.pause(1000);
@@ -49,6 +53,25 @@ When('I enter password {string}', async function (password) {
 
 When('I click on Sign in button', async function () {
     clickButton.call(this, 'button[data-test-button="sign-in"]');
+=======
+
+When('I enter email {string}', async function (email) {
+    await this.driver.pause(1000);
+    let element = await this.driver.$('input#identification');
+    return await element.setValue(email);
+});
+
+When('I enter password {string}', async function (password) {
+    await this.driver.pause(1000);
+    let element = await this.driver.$('input#password');
+    return await element.setValue(password);
+});
+
+When('I click on Sign in button', async function () {
+    await this.driver.pause(1000);
+    let element = await this.driver.$('button[data-test-button="sign-in"]');
+    return await element.click();
+>>>>>>> main
 });
 
 When('el usuario da clic en el boton Add yourself as a member to test', async function () {
@@ -62,7 +85,15 @@ When('el usuario da clic en el boton Add yourself as a member to test', async fu
 });
 
 Then('la URL deberia ser {string}', async function (expectedUrl) {
+<<<<<<< HEAD
     validateUrl.call(this, expectedUrl);
+=======
+    await this.driver.pause(1000);
+    let currentUrl = await this.driver.getUrl();
+    if (currentUrl !== expectedUrl) {
+        throw new Error(`URL esperada era ${expectedUrl}, pero se encontró ${currentUrl}`);
+    }
+>>>>>>> main
 });
 
 Then('debería ver el mensaje de error {string}', async function (expectedErrorMessage) {
@@ -83,16 +114,59 @@ Then('el usuario ve una tabla con el usuario admin agregado {string}', async fun
     }
 });
 
+<<<<<<< HEAD
+=======
+When('el usuario da clic en el boton New Member', async function () {
+    await this.driver.pause(1000);
+    let element = await this.driver.$('[data-test-new-member-button="true"]');
+    return await element.click();
+});
+
+When('el usuario digita name y mail', async function () {
+    await this.driver.pause(1000);
+    let element = await this.driver.$('#member-name');
+    await element.setValue(name);
+    element = await this.driver.$('#member-email');
+    await element.setValue(email);
+});
+
+When('el usuario digita name y mail invalido', async function () {
+    await this.driver.pause(1000);
+    let element = await this.driver.$('#member-name');
+    await element.setValue(name);
+    element = await this.driver.$('#member-email');
+    await element.setValue('mailsinarroba');
+});
+
+When('el usuario da clic en el boton Save', async function () {
+    await this.driver.pause(1000);
+    let element = await this.driver.$('button[data-test-button="save"]');
+    return await element.click();
+});
+
+When('el usuario vuelve a la seccion de miembros del sitio', async function () {
+    await this.driver.pause(1000);
+    let currentUrl = await this.driver.getUrl();
+    if (currentUrl !== config.members_url) {
+        throw new Error(`URL esperada era ${config.members_url}, pero se encontró ${currentUrl}`);
+    }
+});
+
+>>>>>>> main
 Then('el usuario ve una tabla con el usuario agregado', async function () {
     await this.driver.pause(1000);
     let element = this.driver.$('p.gh-members-list-email');
     const emailText = await element.getText();
+<<<<<<< HEAD
     console.log("expected: "+ email);
+=======
+>>>>>>> main
     if (!emailText.includes(email)) {
         throw new Error(`Expected email not found. Found: ${emailText}`);
     }
 });
 
+<<<<<<< HEAD
 When('el usuario da clic en el boton New Member', async function () {
     clickButton.call(this, '[data-test-new-member-button="true"]');
 });
@@ -119,6 +193,8 @@ When('el usuario vuelve a la seccion de miembros del sitio', async function () {
 
 
 
+=======
+>>>>>>> main
 Then('el usuario ve un error de usuario existente', async function () {
     await this.driver.pause(1000);
     let elements = await this.driver.$$('p.response');
@@ -135,6 +211,7 @@ Then('el usuario ve un error de usuario existente', async function () {
     }
 });
 
+<<<<<<< HEAD
 Then('el usuario ve un error de mail invalido {string}', async function (expectedErrorMessage) {
     await this.driver.pause(1000);
     let element = await this.driver.$('div.gh-cp-member-email-name > div.form-group.max-width.error > p');
@@ -142,10 +219,20 @@ Then('el usuario ve un error de mail invalido {string}', async function (expecte
     let currentErrorMessage = await element.getText();
     if (currentErrorMessage.includes(expectedErrorMessage) === false) {
         throw new Error(`Mensaje de error esperado era ${expectedErrorMessage}, pero se encontró ${currentErrorMessage}`);
+=======
+Then('el usuario ve un error de mail invalido', async function () {
+    await this.driver.pause(1000);
+    let element = await this.driver.$('.gh-cp-member-email-name p.response');
+    await this.driver.pause(1000);
+    let currentErrorMessage = await element.getText();
+    if (currentErrorMessage.includes('Invalid Email') === false) {
+        throw new Error(`Mensaje de error esperado era Invalid email address, pero se encontró ${currentErrorMessage}`);
+>>>>>>> main
     }
 });
 
 Then('el usuario da click a la seccion de miembros del sitio', async function () {
+<<<<<<< HEAD
     clickButton.call(this, '[data-test-nav="members"]');
 });
 
@@ -297,6 +384,17 @@ Then('el sistema muestra el mensaje de error "Please enter a valid email address
     if (!currentErrorMessage.includes(expectedErrorMessage)) {
         throw new Error(`Mensaje de error esperado era "${expectedErrorMessage}", pero se encontró "${currentErrorMessage}"`);
     }
+=======
+    await this.driver.pause(1000);
+    let element = await this.driver.$('[data-test-nav="members"]');
+    return await element.click();
+});
+
+Then('el usuario da click en el boton Leave', async function () {
+    await this.driver.pause(1000);
+    let element = await this.driver.$('[data-test-leave-button]');
+    return await element.click();
+>>>>>>> main
 });
 
 
