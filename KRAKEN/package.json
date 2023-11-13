@@ -1,0 +1,16 @@
+{
+  "name": "kraken",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "appium": "^2.2.1",
+    "cucumber": "^6.0.7",
+    "kraken-node": "^1.0.24"
+  }
+}
